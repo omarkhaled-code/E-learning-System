@@ -15,7 +15,6 @@ class AuthController extends Controller
     public function register(Request $request){
         
         
-        
         $incomingFields = $request->validate([
             'name'=> "required",
             'email' => ['required', 'email'],
@@ -35,7 +34,9 @@ class AuthController extends Controller
 
         $incomingFields['password'] = bcrypt($incomingFields['password']);
         
-        return User::create($incomingFields);
+        return  User::create($incomingFields);
+        
+       
         
     }
     public function login(Request $request){

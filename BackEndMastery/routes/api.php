@@ -84,3 +84,7 @@ Route::get('blog/{id}', [BlogController::class, 'show']);
 
 // testimonial
 Route::get('all-testimonial', [TestimonialController::class, 'index']);
+
+Route::get('test', function () {
+    return response()->json(['message' => 'API is working']);
+});
